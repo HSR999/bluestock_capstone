@@ -1,0 +1,333 @@
+
+================================================================================
+fund_master
+================================================================================
+
+Columns:
+['amfi_code', 'fund_house', 'scheme_name', 'category', 'sub_category', 'plan', 'launch_date', 'benchmark', 'expense_ratio_pct', 'exit_load_pct', 'min_sip_amount', 'min_lumpsum_amount', 'fund_manager', 'risk_category', 'sebi_category_code']
+
+Dtypes:
+amfi_code               int64
+fund_house                str
+scheme_name               str
+category                  str
+sub_category              str
+plan                      str
+launch_date               str
+benchmark                 str
+expense_ratio_pct     float64
+exit_load_pct         float64
+min_sip_amount          int64
+min_lumpsum_amount      int64
+fund_manager              str
+risk_category             str
+sebi_category_code        str
+dtype: object
+
+Sample:
+   amfi_code       fund_house                                   scheme_name  \
+0     119551  SBI Mutual Fund     SBI Bluechip Fund - Regular Plan - Growth   
+1     119552  SBI Mutual Fund      SBI Bluechip Fund - Direct Plan - Growth   
+2     119598  SBI Mutual Fund    SBI Small Cap Fund - Regular Plan - Growth   
+3     119599  SBI Mutual Fund     SBI Small Cap Fund - Direct Plan - Growth   
+4     119120  SBI Mutual Fund  SBI Magnum Gilt Fund - Regular Plan - Growth   
+
+  category sub_category     plan launch_date                  benchmark  \
+0   Equity    Large Cap  Regular  2006-02-14              NIFTY 100 TRI   
+1   Equity    Large Cap   Direct  2013-01-01              NIFTY 100 TRI   
+2   Equity    Small Cap  Regular  2009-09-09       BSE 250 SmallCap TRI   
+3   Equity    Small Cap   Direct  2013-01-01       BSE 250 SmallCap TRI   
+4     Debt         Gilt  Regular  2000-12-30  CRISIL Dynamic Gilt Index   
+
+   expense_ratio_pct  exit_load_pct  min_sip_amount  min_lumpsum_amount  \
+0               1.54            1.0             500                1000   
+1               0.66            1.0             500                1000   
+2               1.43            1.0             500                1000   
+3               0.72            1.0             500                1000   
+4               0.77            0.0             500                1000   
+
+    fund_manager risk_category sebi_category_code  
+0  Sohini Andani      Moderate               EC01  
+1  Sohini Andani      Moderate               EC01  
+2  R. Srinivasan     Very High               EC03  
+3  R. Srinivasan     Very High               EC03  
+4   Dinesh Ahuja           Low               DC02  
+
+
+================================================================================
+nav_history
+================================================================================
+
+Columns:
+['amfi_code', 'date', 'nav']
+
+Dtypes:
+amfi_code      int64
+date             str
+nav          float64
+dtype: object
+
+Sample:
+   amfi_code        date      nav
+0     119551  2022-01-03  54.3856
+1     119551  2022-01-04  54.3474
+2     119551  2022-01-05  54.6869
+3     119551  2022-01-06  55.4550
+4     119551  2022-01-07  55.3692
+
+
+================================================================================
+aum
+================================================================================
+
+Columns:
+['date', 'fund_house', 'aum_lakh_crore', 'aum_crore', 'num_schemes']
+
+Dtypes:
+date                  str
+fund_house            str
+aum_lakh_crore    float64
+aum_crore           int64
+num_schemes         int64
+dtype: object
+
+Sample:
+         date           fund_house  aum_lakh_crore  aum_crore  num_schemes
+0  2022-03-31      SBI Mutual Fund            6.05     605000          186
+1  2022-03-31  ICICI Prudential MF            4.65     465000          216
+2  2022-03-31     HDFC Mutual Fund            4.35     435000          195
+3  2022-03-31      Nippon India MF            2.70     270000          177
+4  2022-03-31    Kotak Mahindra MF            2.70     270000          168
+
+
+================================================================================
+sip
+================================================================================
+
+Columns:
+['month', 'sip_inflow_crore', 'active_sip_accounts_crore', 'new_sip_accounts_lakh', 'sip_aum_lakh_crore', 'yoy_growth_pct']
+
+Dtypes:
+month                            str
+sip_inflow_crore               int64
+active_sip_accounts_crore    float64
+new_sip_accounts_lakh        float64
+sip_aum_lakh_crore           float64
+yoy_growth_pct               float64
+dtype: object
+
+Sample:
+     month  sip_inflow_crore  active_sip_accounts_crore  \
+0  2022-01             11517                       4.91   
+1  2022-02             11438                       4.93   
+2  2022-03             12328                       5.09   
+3  2022-04             11863                       5.48   
+4  2022-05             12286                       5.55   
+
+   new_sip_accounts_lakh  sip_aum_lakh_crore  yoy_growth_pct  
+0                   9.10                4.80             NaN  
+1                   8.20                4.85             NaN  
+2                  10.50                5.01             NaN  
+3                   9.52                5.12             NaN  
+4                   8.10                5.15             NaN  
+
+
+================================================================================
+category_inflows
+================================================================================
+
+Columns:
+['month', 'category', 'net_inflow_crore']
+
+Dtypes:
+month                   str
+category                str
+net_inflow_crore    float64
+dtype: object
+
+Sample:
+     month         category  net_inflow_crore
+0  2024-04        Large Cap            2413.0
+1  2024-04          Mid Cap            3897.0
+2  2024-04        Small Cap            3533.0
+3  2024-04        Flexi Cap            4947.0
+4  2024-04  Large & Mid Cap            4214.0
+
+
+================================================================================
+folio
+================================================================================
+
+Columns:
+['month', 'total_folios_crore', 'equity_folios_crore', 'debt_folios_crore', 'hybrid_folios_crore', 'others_folios_crore']
+
+Dtypes:
+month                      str
+total_folios_crore     float64
+equity_folios_crore    float64
+debt_folios_crore      float64
+hybrid_folios_crore    float64
+others_folios_crore    float64
+dtype: object
+
+Sample:
+     month  total_folios_crore  equity_folios_crore  debt_folios_crore  \
+0  2022-01               13.26                 9.28               1.86   
+1  2022-04               13.91                 9.74               1.95   
+2  2022-07               13.85                 9.69               1.94   
+3  2022-10               14.12                 9.88               1.98   
+4  2023-01               14.81                10.37               2.07   
+
+   hybrid_folios_crore  others_folios_crore  
+0                 0.80                 1.33  
+1                 0.83                 1.39  
+2                 0.83                 1.38  
+3                 0.85                 1.41  
+4                 0.89                 1.48  
+
+
+================================================================================
+scheme_performance
+================================================================================
+
+Columns:
+['amfi_code', 'scheme_name', 'fund_house', 'category', 'plan', 'return_1yr_pct', 'return_3yr_pct', 'return_5yr_pct', 'benchmark_3yr_pct', 'alpha', 'beta', 'sharpe_ratio', 'sortino_ratio', 'std_dev_ann_pct', 'max_drawdown_pct', 'aum_crore', 'expense_ratio_pct', 'morningstar_rating', 'risk_grade']
+
+Dtypes:
+amfi_code               int64
+scheme_name               str
+fund_house                str
+category                  str
+plan                      str
+return_1yr_pct        float64
+return_3yr_pct        float64
+return_5yr_pct        float64
+benchmark_3yr_pct     float64
+alpha                 float64
+beta                  float64
+sharpe_ratio          float64
+sortino_ratio         float64
+std_dev_ann_pct       float64
+max_drawdown_pct      float64
+aum_crore               int64
+expense_ratio_pct     float64
+morningstar_rating      int64
+risk_grade                str
+dtype: object
+
+Sample:
+   amfi_code                                   scheme_name       fund_house  \
+0     119551     SBI Bluechip Fund - Regular Plan - Growth  SBI Mutual Fund   
+1     119552      SBI Bluechip Fund - Direct Plan - Growth  SBI Mutual Fund   
+2     119598    SBI Small Cap Fund - Regular Plan - Growth  SBI Mutual Fund   
+3     119599     SBI Small Cap Fund - Direct Plan - Growth  SBI Mutual Fund   
+4     119120  SBI Magnum Gilt Fund - Regular Plan - Growth  SBI Mutual Fund   
+
+    category     plan  return_1yr_pct  return_3yr_pct  return_5yr_pct  \
+0  Large Cap  Regular           12.42           12.36           14.45   
+1  Large Cap   Direct           15.25           11.30           14.23   
+2  Small Cap  Regular           24.56           23.39           20.67   
+3  Small Cap   Direct           20.59           23.14           21.82   
+4       Gilt  Regular            5.34            6.07            5.43   
+
+   benchmark_3yr_pct  alpha  beta  sharpe_ratio  sortino_ratio  \
+0              11.49   0.87  0.89          0.88           1.29   
+1               9.52   1.78  0.87          0.81           1.29   
+2              22.16   1.23  0.89          0.94           1.35   
+3              22.01   1.13  1.04          0.93           1.67   
+4               4.47   1.60  0.22          1.52           2.11   
+
+   std_dev_ann_pct  max_drawdown_pct  aum_crore  expense_ratio_pct  \
+0             14.0            -21.70      14288               1.54   
+1             14.0            -24.43       1231               0.66   
+2             25.0            -13.35      19259               1.43   
+3             25.0            -24.78      36061               0.72   
+4              4.0             -2.30      24101               0.77   
+
+   morningstar_rating risk_grade  
+0                   4   Moderate  
+1                   3   Moderate  
+2                   5  Very High  
+3                   4  Very High  
+4                   5        Low  
+
+
+================================================================================
+transactions
+================================================================================
+
+Columns:
+['investor_id', 'transaction_date', 'amfi_code', 'transaction_type', 'amount_inr', 'state', 'city', 'city_tier', 'age_group', 'gender', 'annual_income_lakh', 'payment_mode', 'kyc_status']
+
+Dtypes:
+investor_id               str
+transaction_date          str
+amfi_code               int64
+transaction_type          str
+amount_inr              int64
+state                     str
+city                      str
+city_tier                 str
+age_group                 str
+gender                    str
+annual_income_lakh    float64
+payment_mode              str
+kyc_status                str
+dtype: object
+
+Sample:
+  investor_id transaction_date  amfi_code transaction_type  amount_inr  \
+0   INV003054       2024-01-01     119092              SIP        1834   
+1   INV002952       2024-01-01     148567       Redemption      392882   
+2   INV003420       2024-01-01     118636              SIP         912   
+3   INV003436       2024-01-01     118634              SIP        1102   
+4   INV004691       2024-01-01     119094          Lumpsum        8682   
+
+         state       city city_tier age_group  gender  annual_income_lakh  \
+0    Telangana  Hyderabad       T30       56+  Female                77.1   
+1       Punjab   Amritsar       B30     18-25    Male                 7.1   
+2      Haryana  Faridabad       B30     36-45    Male                47.2   
+3  Maharashtra     Mumbai       T30     36-45  Female                54.4   
+4        Delhi      Noida       T30     26-35    Male                14.5   
+
+  payment_mode kyc_status  
+0          UPI   Verified  
+1       Cheque   Verified  
+2      Mandate   Verified  
+3       Cheque    Pending  
+4  Net Banking    Pending  
+
+
+================================================================================
+holdings
+================================================================================
+
+Columns:
+['amfi_code', 'stock_symbol', 'stock_name', 'sector', 'weight_pct', 'market_value_cr', 'current_price_inr', 'portfolio_date']
+
+Dtypes:
+amfi_code              int64
+stock_symbol             str
+stock_name               str
+sector                   str
+weight_pct           float64
+market_value_cr      float64
+current_price_inr    float64
+portfolio_date           str
+dtype: object
+
+Sample:
+   amfi_code stock_symbol                stock_name       sector  weight_pct  \
+0     119551    POWERGRID    Power Grid Corporation    Utilities       13.85   
+1     119551     HDFCBANK             HDFC Bank Ltd      Banking       11.19   
+2     119551       GRASIM     Grasim Industries Ltd  Diversified        9.90   
+3     119551      DRREDDY  Dr. Reddy's Laboratories       Pharma        4.76   
+4     119551   ASIANPAINT          Asian Paints Ltd       Paints       10.25   
+
+   market_value_cr  current_price_inr portfolio_date  
+0           737.09            6011.08     2025-12-31  
+1            88.97            1074.65     2025-12-31  
+2           208.45            5964.59     2025-12-31  
+3           161.32            3748.82     2025-12-31  
+4           725.90            1321.45     2025-12-31  
+
